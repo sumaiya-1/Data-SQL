@@ -7,5 +7,4 @@ create table test1 (
 id INT,
 name VARCHAR(20),
 email VARCHAR(50),
-age INT
 );
