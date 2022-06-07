@@ -1,2 +1,2 @@
-# Data-SQL scripts repository
+# Data-SQL
 CFG Data and SQL project
