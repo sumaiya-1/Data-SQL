@@ -3,11 +3,11 @@ CREATE DATABASE HOSPITAL_MGMT;
 USE HOSPITAL_MGMT;
 
 CREATE TABLE INPATIENT(
-	patient_id INT PRIMARY KEY,
 	patient_name VARCHAR(50) NOT NULL,
+	patient_id INT NOT NULL PRIMARY KEY,
 	gender VARCHAR(20) NOT NULL,
 	address VARCHAR(50) NOT NULL,
-	bed_no INT NOT NULL,
+	bed_no VARCHAR(20) NOT NULL,
 	admission_date DATE NOT NULL,
 	discharge_date DATE,
 	lab_no INT, -- add foreign key
@@ -16,7 +16,7 @@ CREATE TABLE INPATIENT(
 );
 
 CREATE TABLE ROOM (
-	bed_no INT NOT NULL PRIMARY KEY,
+	bed_no VARCHAR(20) NOT NULL PRIMARY KEY,
 	room_type VARCHAR(20) NOT NULL,
 	ward VARCHAR(20) NOT NULL,
 	patient_id INT, 
@@ -26,7 +26,8 @@ CREATE TABLE ROOM (
 CREATE TABLE APPOINTMENTS (
 	appointment_id INT NOT NULL PRIMARY KEY,
     appointment_type VARCHAR(50) NOT NULL,
-    appointment_date DATETIME NOT NULL,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL,
     appointment_duration VARCHAR(50),
     doctor_id INT NOT NULL, -- add foreign key 
     patient_id INT NOT NULL,
