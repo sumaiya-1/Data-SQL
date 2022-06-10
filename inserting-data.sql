@@ -60,57 +60,57 @@ SELECT * FROM INPATIENT;
 -- Inserting data into ROOM table
 
 INSERT INTO 
-ROOM (bed_no, room_type, ward, patient_id)
+ROOM (bed_no, room_type, ward_name, ward_type, patient_id)
 VALUES
-('S-1',	'Bay',	'Nightingale Ward',	128),
-('S-2',	'Bay',	'Nightingale Ward',	130),
-('S-3',	'Bay',	'Nightingale Ward',	132),
-('S-4',	'Bay',	'Nightingale Ward',	138),
-('S-5',	'Bay',	'Nightingale Ward',	144),
-('S-6',	'Bay',	'Nightingale Ward',	150),
-('S-7',	'Bay',	'Nightingale Ward',	156),
-('S-8',	'Bay',	'Nightingale Ward',	166),
-('R-1',	'Cubicle',	'Fox Ward',	123),
-('R-2',	'Bay',	'Fox Ward',	127),
-('R-3',	'Bay',	'Fox Ward',	129),
-('R-4',	'Bay',	'Fox Ward',	131),
-('R-5',	'Bay',	'Fox Ward',	136),
-('R-6',	'Cubicle',	'Fox Ward',	141),
-('R-7',	'Cubicle',	'Fox Ward',	148),
-('R-8',	'Cubicle',	'Fox Ward',	155),
-('R-9',	'Bay',	'Fox Ward',	158),
-('R-10',	'Bay',	'Fox Ward',	170),
-('G-1',	'Bay',	'Apley Ward',	125),
-('G-2',	'Bay',	'Apley Ward',	133),
-('G-3',	'Bay',	'Apley Ward',	139),
-('G-4',	'Bay',	'Apley Ward',	149),
-('G-5',	'Bay',	'Apley Ward',	157),
-('G-6',	'Bay',	'Apley Ward',	167),
-('G-7',	'Bay',	'Apley Ward',	171),
-('H-1',	'Bay',	'Samaritan Ward',	126),
-('H-2',	'Bay',	'Samaritan Ward',	134),
-('H-3',	'Cubicle',	'Samaritan Ward',	147),
-('H-4',	'Cubicle',	'Samaritan Ward',	154),
-('H-5',	'Bay',	'Samaritan Ward',	160),
-('H-6',	'Cubicle',	'Samaritan Ward',	165),
-('H-7',	'Bay',	'Samaritan Ward',	168),
-('C-1',	'Bay',	'Becket Ward',	124),
-('C-2',	'Bay',	'Becket Ward',	145),
-('C-3',	'Bay',	'Becket Ward',	151),
-('C-4',	'Cubicle',	'Becket Ward',	161),
-('C-5',	'Cubicle',	'Becket Ward',	169),
-('D-1',	'Bay',	'Page Ward',	135),
-('D-2',	'Bay',	'Page Ward',	137),
-('D-3',	'Bay',	'Page Ward',	140),
-('D-4',	'Bay',	'Page Ward',	142),
-('D-5',	'Bay',	'Page Ward',	143),
-('D-6',	'Bay',	'Page Ward',	146),
-('D-7',	'Cubicle',	'Page Ward',	152),
-('D-8',	'Bay',	'Page Ward',	153),
-('D-9',	'Bay',	'Page Ward',	159),
-('D-10',	'Cubicle',	'Page Ward',	162),
-('D-11',	'Bay',	'Page Ward',	163),
-('D-12',	'Bay',	'Page Ward',	164);
+('S-1',	'Bay',	'Nightingale Ward',	'General surgery',	128),
+('S-2',	'Bay',	'Nightingale Ward',	'General surgery',	130),
+('S-3',	'Bay',	'Nightingale Ward',	'General surgery',	132),
+('S-4',	'Bay',	'Nightingale Ward',	'General surgery',	138),
+('S-5',	'Bay',	'Nightingale Ward',	'General surgery',	144),
+('S-6',	'Bay',	'Nightingale Ward',	'General surgery',	150),
+('S-7',	'Bay',	'Nightingale Ward',	'General surgery',	156),
+('S-8',	'Bay',	'Nightingale Ward',	'General surgery',	166),
+('R-1',	'Cubicle',	'Fox Ward',	'Respiratory',	123),
+('R-2',	'Bay',	'Fox Ward',	'Respiratory',	127),
+('R-3',	'Bay',	'Fox Ward',	'Respiratory',	129),
+('R-4',	'Bay',	'Fox Ward',	'Respiratory',	131),
+('R-5',	'Bay',	'Fox Ward',	'Respiratory',	136),
+('R-6',	'Cubicle',	'Fox Ward',	'Respiratory',	141),
+('R-7',	'Cubicle',	'Fox Ward',	'Respiratory',	148),
+('R-8',	'Cubicle',	'Fox Ward',	'Respiratory',	155),
+('R-9',	'Bay',	'Fox Ward',	'Respiratory',	158),
+('R-10',	'Bay',	'Fox Ward',	'Respiratory',	170),
+('G-1',	'Bay',	'Apley Ward',	'Gastroentrology',	125),
+('G-2',	'Bay',	'Apley Ward',	'Gastroentrology',	133),
+('G-3',	'Bay',	'Apley Ward',	'Gastroentrology',	139),
+('G-4',	'Bay',	'Apley Ward',	'Gastroentrology',	149),
+('G-5',	'Bay',	'Apley Ward',	'Gastroentrology',	157),
+('G-6',	'Bay',	'Apley Ward',	'Gastroentrology',	167),
+('G-7',	'Bay',	'Apley Ward',	'Gastroentrology',	171),
+('H-1',	'Bay',	'Samaritan Ward',	'Haematology',	126),
+('H-2',	'Bay',	'Samaritan Ward',	'Haematology',	134),
+('H-3',	'Cubicle',	'Samaritan Ward',	'Haematology',	147),
+('H-4',	'Cubicle',	'Samaritan Ward',	'Haematology',	154),
+('H-5',	'Bay',	'Samaritan Ward',	'Haematology',	160),
+('H-6',	'Cubicle',	'Samaritan Ward',	'Haematology',	165),
+('H-7',	'Bay',	'Samaritan Ward',	'Haematology',	168),
+('C-1',	'Bay',	'Becket Ward',	'Cardiology',	124),
+('C-2',	'Bay',	'Becket Ward',	'Cardiology',	145),
+('C-3',	'Bay',	'Becket Ward',	'Cardiology',	151),
+('C-4',	'Cubicle',	'Becket Ward',	'Cardiology',	161),
+('C-5',	'Cubicle',	'Becket Ward',	'Cardiology',	169),
+('D-1',	'Bay',	'Page Ward',	'Dermatology',	135),
+('D-2',	'Bay',	'Page Ward',	'Dermatology',	137),
+('D-3',	'Bay',	'Page Ward',	'Dermatology',	140),
+('D-4',	'Bay',	'Page Ward',	'Dermatology',	142),
+('D-5',	'Bay',	'Page Ward',	'Dermatology',	143),
+('D-6',	'Bay',	'Page Ward',	'Dermatology',	146),
+('D-7',	'Cubicle',	'Page Ward',	'Dermatology',	152),
+('D-8',	'Bay',	'Page Ward',	'Dermatology',	153),
+('D-9',	'Bay',	'Page Ward',	'Dermatology',	159),
+('D-10',	'Cubicle',	'Page Ward',	'Dermatology',	162),
+('D-11',	'Bay',	'Page Ward',	'Dermatology',	163),
+('D-12',	'Bay',	'Page Ward',	'Dermatology',	164);
 
 SELECT * FROM ROOM;
 
@@ -133,5 +133,12 @@ VALUES
 (12,	'Face to face',	'2022-06-23', '10:30:00',	'20 mins',	6643,	146),
 (13,	'Face to face',	'2022-06-23', '09:00:00',	'30 mins',	4005,	162);
 
+
+SELECT * FROM INPATIENT;
+SELECT * FROM ROOM;
 SELECT * FROM APPOINTMENTS;
+
+
+
+
 
