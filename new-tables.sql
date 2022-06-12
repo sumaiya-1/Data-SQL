@@ -31,8 +31,6 @@ CREATE TABLE APPOINTMENTS (
     appointment_time TIME NOT NULL,
     appointment_duration VARCHAR(50),
     doctor_id INT NOT NULL, -- add foreign key 
-    patient_id INT NOT NULL,
-    FOREIGN KEY (patient_id) REFERENCES INPATIENT(patient_id)
 );
 
 DROP DATABASE HOSPITAL_MGMT
@@ -62,9 +60,11 @@ GENDER VARCHAR(10) NOT NULL,
 PRIMARY KEY (A_ID)
 );
 
+-- added appoinment id to this table - you can use the appointment id to find the patients which will have outpatients appointments
 CREATE TABLE OUTPATIENTS(
 PATIENT_ID INT(5),
-DATE DATETIME NOT NULL,
+appointment_id INT NOT NULL,
 LAB_NO INT(5), -- add foreign key
-PRIMARY KEY (PATIENT_ID)
+PRIMARY KEY (PATIENT_ID),
+FOREIGN KEY (appointment_id) REFERENCES APPOINTMENTS(appointment_id)
 );
