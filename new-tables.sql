@@ -30,14 +30,12 @@ CREATE TABLE APPOINTMENTS (
     appointment_date DATE NOT NULL,
     appointment_time TIME NOT NULL,
     appointment_duration VARCHAR(50),
-    doctor_id INT NOT NULL, -- add foreign key 
+    doctor_id INT NOT NULL -- add foreign key 
 );
 
-DROP DATABASE HOSPITAL_MGMT
-
 CREATE TABLE BILL(
-BILL_NO INT(50) NOT NULL,
-PATIENT_ID INT(5), 
+BILL_NO INT NOT NULL,
+PATIENT_ID INT, 
 PATIENT_TYPE VARCHAR(10),
 DOCTOR_CHARGE INT NOT NULL,
 MEDICINE_CHARGE INT NOT NULL,
@@ -54,7 +52,7 @@ FOREIGN KEY (PATIENT_ID) REFERENCES INPATIENT(PATIENT_ID)
 );
 
 CREATE TABLE ADMINISTRATOR(
-A_ID INT(5),
+A_ID INT,
 A_NAME VARCHAR(20) NOT NULL,
 GENDER VARCHAR(10) NOT NULL,
 PRIMARY KEY (A_ID)
@@ -62,9 +60,10 @@ PRIMARY KEY (A_ID)
 
 -- added appoinment id to this table - you can use the appointment id to find the patients which will have outpatients appointments
 CREATE TABLE OUTPATIENTS(
-PATIENT_ID INT(5), 
+PATIENT_ID INT, 
 appointment_id INT NOT NULL,
-LAB_NO INT(5), -- add foreign key
+LAB_NO INT, -- add foreign key
 PRIMARY KEY (PATIENT_ID),
 FOREIGN KEY (appointment_id) REFERENCES APPOINTMENTS(appointment_id)
 );
+
