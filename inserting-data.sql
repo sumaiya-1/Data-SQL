@@ -138,6 +138,34 @@ SELECT * FROM INPATIENT;
 SELECT * FROM ROOM;
 SELECT * FROM APPOINTMENTS;
 
+insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID,WARD_NAME)
+values
+('John Dorian','General Medicine',7463,'Nightingale Ward'),
+('Elliot Reid', 'physician',8548,'Fox Ward'),
+('Christopher Turk', 'gyne',1930,'Apley Ward'),
+('Percival Cox', 'ortho',6204,'Samaritan Ward'),
+('Bob Kelso', 'derma',7247,'Page Ward'),
+('Todd Quinlan','children specialist',4005,'Becket Ward'),
+('Todd jerry','ortho specialist',3664,'Becket Ward'),
+('Andrew F','gastro specialist',9486,'Page Ward'),
+('Nilesh G','general medicine',3526,'Becket Ward'),
+('Andy R','Cardio',7038,'Samaritan Ward'),
+('Neil M','Rhematologist',6643,'Apley Ward');
+
+insert into NURSE(nurse_name,nurse_id,nurse_level,ward_name,nurse_speciality)
+VALUES ('MARY B',342,1,'Apley Ward','General Medicine'),
+ ('REBECCA R',343,2,'Samaritan Ward','General Medicine'),
+ ('SUZI B',344,2,'Apley Ward','General Medicine'),
+ ('KATE H',345,3,'Apley Ward','General Medicine'),
+ ('RHONA Y',346,1,'Becket Ward','General Medicine'),
+ ('SALLY F',347,2,'Nightingale Ward','General Medicine'),
+ ('ERICA R',348,2,'Samaritan Ward','General Medicine'),
+ ('MEERA Y',349,3,'Page Ward','General Medicine'),
+ ('ESTHER E',350,2,'Apley Ward','General Medicine'),
+ ('LISA B',351,3,'Fox Ward','General Medicine');
+ 
+ update NURSE set IS_STUDENT_TRAINEE_INVOLVED=false where nurse_id in (342,343,344,345);
+ update nurse set is_student_trainee_involved=true where nurse_id in (346,347,348,349,350,351);
 
 
 
