@@ -117,21 +117,21 @@ SELECT * FROM ROOM;
 -- Inserting data into APPOINTMENT TABLE
 
 INSERT INTO 
-APPOINTMENTS (appointment_id, appointment_type, appointment_date, appointment_time, appointment_duration, doctor_id, patient_id)
+APPOINTMENTS (appointment_id, appointment_type, appointment_date, appointment_time, appointment_duration, doctor_id)
 VALUES
-(1,	'Face to face',	'2022-06-20', '13:30:00',	'1 hour',	7463,	124),
-(2,	'Face to face',	'2022-06-21', '10:00:00',	'1 hour',	8548,	134),
-(3,	'Face to face',	'2022-06-22', '12:00:00',	'30 mins',	1930,	147),
-(4,	'Telephone call',	'2022-06-22', '14:00:00',	'1 hour',	6204,	141),
-(5,	'Telephone call',	'2022-06-21', '12:00:00',	'1 hour',	7247,	132),
-(6,	'Face to face',	'2022-06-22', '13:00:00',	'30-45 mins',	4005,	152),
-(7,	'Telephone call',	'2022-06-21', '11:30:00',	'25 mins',	3664,	130),
-(8,	'Telephone call',	'2022-06-20', '09:30:00',	'30 mins',	8548,	126),
-(9,	'Face to face',	'2022-06-23', '11:00:00',	'1 hour',	9486,	171),
-(10,	'Face to face',	'2022-06-20', '14:30:00',	'45 mins',	3526,	165),
-(11,	'Telephone call',	'2022-06-22', '16:00:00',	'20 mins',	7038,	155),
-(12,	'Face to face',	'2022-06-23', '10:30:00',	'20 mins',	6643,	146),
-(13,	'Face to face',	'2022-06-23', '09:00:00',	'30 mins',	4005,	162);
+(1,	'Face to face',	'2022-06-20', '13:30:00',	'1 hour',	7463),
+(2,	'Face to face',	'2022-06-21', '10:00:00',	'1 hour',	8548),
+(3,	'Face to face',	'2022-06-22', '12:00:00',	'30 mins',	1930),
+(4,	'Telephone call',	'2022-06-22', '14:00:00',	'1 hour',	6204),
+(5,	'Telephone call',	'2022-06-21', '12:00:00',	'1 hour',	7247),
+(6,	'Face to face',	'2022-06-22', '13:00:00',	'30-45 mins',	4005),
+(7,	'Telephone call',	'2022-06-21', '11:30:00',	'25 mins',	3664),
+(8,	'Telephone call',	'2022-06-20', '09:30:00',	'30 mins',	8548),
+(9,	'Face to face',	'2022-06-23', '11:00:00',	'1 hour',	9486),
+(10,	'Face to face',	'2022-06-20', '14:30:00',	'45 mins',	3526),
+(11,	'Telephone call',	'2022-06-22', '16:00:00',	'20 mins',	7038),
+(12,	'Face to face',	'2022-06-23', '10:30:00',	'20 mins',	6643),
+(13,	'Face to face',	'2022-06-23', '09:00:00',	'30 mins',	4005);
 
 
 SELECT * FROM INPATIENT;
