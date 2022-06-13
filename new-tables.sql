@@ -62,7 +62,7 @@ PRIMARY KEY (A_ID)
 
 -- added appoinment id to this table - you can use the appointment id to find the patients which will have outpatients appointments
 CREATE TABLE OUTPATIENTS(
-PATIENT_ID INT(5),
+PATIENT_ID INT(5), 
 appointment_id INT NOT NULL,
 LAB_NO INT(5), -- add foreign key
 PRIMARY KEY (PATIENT_ID),
