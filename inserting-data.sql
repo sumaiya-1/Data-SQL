@@ -204,4 +204,4 @@ values
 ('Andy R','Cardio',7038),
 ('Neil M','Rhematologist',6643);
 
-
+SET FOREIGN_KEY_CHECKS=1;
