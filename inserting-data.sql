@@ -53,7 +53,7 @@ VALUES
 ('Johan Lax',	168,	'M',	'30 SeatonCrescent, Corby',	'H-7',	'2022-06-13',	'2022-06-16',	46,	1930,	'Chronic anaemia'),
 ('Toini Hakola',	169,	'M',	'30 ThornClose, Kettering',	'C-5',	'2022-06-16',	NULL,	47,	2636,	'Stroke'),
 ('Kimmo Paarma',	170,	'M',	'19 WakeClose, Wellingborough',	'R-10',	'2022-06-17',	NULL,	48,	7842,	'COPD'),
-('Hanne Lange',	171,	'M',	'26 DoncasterRoad, Langold',	'G-7',	'2022-06-17',	'2022-06-21',	49,	9486,	'Chron disease');
+('Hanne Lange',	171,	'M',	'26 DoncasterRoad, Langold',	'G-7',	'2022-06-17',	'2022-06-21',	49,	9486,	'Chron disease'),
 
 SELECT * FROM INPATIENT;
 
@@ -167,5 +167,11 @@ VALUES ('MARY B',342,1,'Apley Ward','General Medicine'),
  update nurse set is_student_trainee_involved=true where nurse_id in (346,347,348,349,350,351);
 
 
-
+INSERT INTO ADMINISTRATOR(A_ID,A_NAME,GENDER)
+VALUES('00001','EMILY','FEMALE'),
+('00002','MICHEAL','MALE'),
+('00003','CHARLOTTE','FEMALE'),
+('00004','ELLIOT','MALE'),
+('00005','MELANIE','FEMALE'),
+('00006','JOHN','MALE');
 
