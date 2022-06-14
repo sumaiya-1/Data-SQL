@@ -83,7 +83,7 @@ VALUES
 ('Felix Kuhn',	148,	'M',	'26 AshfieldAvenue, Beeston',	'R-7',	'2022-06-15',	'2022-06-19',	26,	7038,	353,	'Emphysema'),
 ('Christian Huber',	149,	'M',	'12 DucksNest, Lutton',	'G-4',	'2022-06-20',	'2022-06-21',	27,	9486,	351,	'Chron disease'),
 ('Alicia Reilly',	150,	'F',	'3 TheGranary, OldHurst',	'S-6',	'2022-06-20',	'2022-06-20',	28,	8837,	343,	'Tonsillectomy'),
-('Lexi Milne',	151,	'F',	'2 SalamanderClose, Carlton',	'C-3',	'2022-05-17',	'2022-06-20',	29,	5376,	356,	'Acute coronary syndrome'),
+('Lexi Milne',	151,	'F',	'2 SalamanderClose, Carlton',	'C-3',	'2022-06-17',	'2022-06-20',	29,	5376,	356,	'Acute coronary syndrome'),
 ('Violet Gordon',	152,	'F',	'20 HallClose, Bourn',	'D-7',	'2022-06-18',	NULL,	30,	4005,	347,	'Severe skin infection'),
 ('Allan Scott',	153,	'M',	'29 CransleyStreet, Broughton',	'D-8',	'2022-06-15',	'2022-06-19',	31,	4005,	354,	'Cellulitis'),
 ('Kyle Bruce',	154,	'M',	'11 WoodhallClose, Mansfield',	'H-4',	'2022-06-12',	'2022-06-18',	32,	3526,	337,	'Lymphoma'),
