@@ -190,18 +190,28 @@ VALUES
 
 
 -- Inserting data into doctor table
-insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID)
+insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID,WARD_NAME)
 values
-('John Dorian','General Medicine',7463),
-('Elliot Reid', 'physician',8548),
-('Christopher Turk', 'gyne',1930),
-('Percival Cox', 'ortho',6204),
-('Bob Kelso', 'derma',7247),
-('Todd Quinlan','children specialist',4005),
-('Todd jerry','ortho specialist',3664),
-('Andrew F','gastro specialist',9486),
-('Nilesh G','general medicine',3526),
-('Andy R','Cardio',7038),
-('Neil M','Rhematologist',6643);
+('John Dorian','General Medicine',7463,'Nightingale Ward'),
+('Elliot Reid', 'physician',8548,'Fox Ward'),
+('Christopher Turk', 'gyne',1930,'Apley Ward'),
+('Percival Cox', 'ortho',6204,'Samaritan Ward'),
+('Bob Kelso', 'derma',7247,'Page Ward'),
+('Todd Quinlan','children specialist',4005,'Becket Ward'),
+('Todd jerry','ortho specialist',3664,'Becket Ward'),
+('Andrew F','gastro specialist',9486,'Page Ward'),
+('Nilesh G','general medicine',3526,'Becket Ward'),
+('Andy R','Cardio',7038,'Samaritan Ward'),
+('Neil M','Rhematologist',6643,'Apley Ward'),
+('Ricardo G','General Medicine',1264,'Nightingale Ward'),
+('Sam Gardiner', 'physician',4633,'Samaritan Ward'),
+('Chris Tab', 'physician',7842,'Samaritan Ward'),
+('Giles F','gastro specialist',8574,'Page Ward'),
+('Mark U','general medicine',4326,'Becket Ward'),
+('Robin T','general medicine',9968,'Becket Ward'),
+('Alex Martin','general medicine',8837,'Page Ward'),
+('Cindy R','general medicine',5376,'Becket Ward'),
+('Derek Salter','general medicine',2636,'Becket Ward');
+
 
 SET FOREIGN_KEY_CHECKS=1;
