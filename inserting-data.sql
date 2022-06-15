@@ -211,7 +211,6 @@ values
 ('Robin T','Surgeon',9968),
 ('Alex Martin','Surgeon',8837),
 ('Cindy R','Cardiologist',5376),
-('Derek Salter','Cardiologist',2636),
-('Ruby Baley', 'Haematologist', 8755);
+('Derek Salter','Cardiologist',2636);
 
 SET FOREIGN_KEY_CHECKS=1;
