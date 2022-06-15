@@ -1,9 +1,3 @@
--- INSERTING DATA
-
--- USE this otherwise database will throw errors
-SET FOREIGN_KEY_CHECKS=0;
-
--- Inserting data into NURSE table
 insert into NURSE(nurse_name,nurse_id,nurse_level)
 VALUES 
 ('Phoebe Carroll',	334, 5),
@@ -36,20 +30,81 @@ VALUES
 
 -- Inserting data into OUTPATIENTS table
 
-INSERT INTO OUTPATIENTS(PATIENT_ID,APPOINTMENT_ID,LAB_NO)
-VALUES('124','1','02'),
-('134','2','12'),
-('147','3','25'),
-('141','4','19'),
-('132','5','10'),
-('152','6','30'),
-('130','7','08'),
-('126','8','04'),
-('171','9','49'),
-('165','10','43'),
-('155','11','33'),
-('146','12','24'),
-('162','13','40');
+insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID)
+values
+('John Dorian','Cardiologist',7463),
+('Elliot Reid', 'Haematologist',8548),
+('Christopher Turk', 'Haematologist',1930),
+('Percival Cox', 'Pulmonologist',6204),
+('Bob Kelso', 'Surgeon',7247),
+('Todd Quinlan','Dermatologist',4005),
+('Todd jerry','Surgeon',3664),
+('Andrew F','Gastrologist',9486),
+('Nilesh G','Haematologist',3526),
+('Andy R','Pulmonologist',7038),
+('Neil M','Dermatologist',6643),
+('Ricardo G','Pulmonologist',1264),
+('Sam Gardiner', 'Gastrologist',4633),
+('Chris Tab', 'Pulmonologist',7842),
+('Giles F','Surgeon',8574),
+('Mark U','Dermatologist',4326),
+('Robin T','Surgeon',9968),
+('Alex Martin','Surgeon',8837),
+('Cindy R','Cardiologist',5376),
+('Derek Salter','Cardiologist',2636);
+
+INSERT INTO 
+WARDS (bed_no, room_type, ward_name, ward_type)
+VALUES
+('S-1',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-2',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-3',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-4',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-5',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-6',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-7',	'Bay',	'Nightingale Ward',	'General surgery'),
+('S-8',	'Bay',	'Nightingale Ward',	'General surgery'),
+('R-1',	'Cubicle',	'Fox Ward',	'Respiratory'),
+('R-2',	'Bay',	'Fox Ward',	'Respiratory'),
+('R-3',	'Bay',	'Fox Ward',	'Respiratory'),
+('R-4',	'Bay',	'Fox Ward',	'Respiratory'),
+('R-5',	'Bay',	'Fox Ward',	'Respiratory'),
+('R-6',	'Cubicle',	'Fox Ward',	'Respiratory'),
+('R-7',	'Cubicle',	'Fox Ward',	'Respiratory'),
+('R-8',	'Cubicle',	'Fox Ward',	'Respiratory'),
+('R-9',	'Bay',	'Fox Ward',	'Respiratory'),
+('R-10',	'Bay',	'Fox Ward',	'Respiratory'),
+('G-1',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-2',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-3',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-4',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-5',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-6',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('G-7',	'Bay',	'Apley Ward',	'Gastroentrology'),
+('H-1',	'Bay',	'Samaritan Ward',	'Haematology'),
+('H-2',	'Bay',	'Samaritan Ward',	'Haematology'),
+('H-3',	'Cubicle',	'Samaritan Ward',	'Haematology'),
+('H-4',	'Cubicle',	'Samaritan Ward',	'Haematology'),
+('H-5',	'Bay',	'Samaritan Ward',	'Haematology'),
+('H-6',	'Cubicle',	'Samaritan Ward',	'Haematology'),
+('H-7',	'Bay',	'Samaritan Ward',	'Haematology'),
+('C-1',	'Bay',	'Becket Ward',	'Cardiology'),
+('C-2',	'Bay',	'Becket Ward',	'Cardiology'),
+('C-3',	'Bay',	'Becket Ward',	'Cardiology'),
+('C-4',	'Cubicle',	'Becket Ward',	'Cardiology'),
+('C-5',	'Cubicle',	'Becket Ward',	'Cardiology'),
+('D-1',	'Bay',	'Page Ward',	'Dermatology'),
+('D-2',	'Bay',	'Page Ward',	'Dermatology'),
+('D-3',	'Bay',	'Page Ward',	'Dermatology'),
+('D-4',	'Bay',	'Page Ward',	'Dermatology'),
+('D-5',	'Bay',	'Page Ward',	'Dermatology'),
+('D-6',	'Bay',	'Page Ward',	'Dermatology'),
+('D-7',	'Cubicle',	'Page Ward',	'Dermatology'),
+('D-8',	'Bay',	'Page Ward',	'Dermatology'),
+('D-9',	'Bay',	'Page Ward',	'Dermatology'),
+('D-10',	'Cubicle',	'Page Ward',	'Dermatology'),
+('D-11',	'Bay',	'Page Ward',	'Dermatology'),
+('D-12',	'Bay',	'Page Ward',	'Dermatology');
 
 -- Inserting data into INPATIENTS table
 INSERT INTO 
@@ -106,71 +161,6 @@ VALUES
 ('Hanne Lange',	171,	'M',	'26 DoncasterRoad, Langold',	'G-7',	'2022-06-17',	'2022-06-21',	49,	9486,	336,	'Chron disease');
 
 
--- Inserting data into ADMIN table
-INSERT INTO ADMINISTRATOR(A_ID,A_NAME,GENDER)
-VALUES(01,'EMILY','FEMALE'),
-(02,'MICHEAL','MALE'),
-(03,'CHARLOTTE','FEMALE'),
-(04,'ELLIOT','MALE'),
-(05,'MELANIE','FEMALE'),
-(06,'JOHN','MALE');
-
--- Inserting data into WARDS table
-INSERT INTO 
-WARDS (bed_no, room_type, ward_name, ward_type, patient_id, a_id)
-VALUES
-('S-1',	'Bay',	'Nightingale Ward',	'General surgery',	128, 02),
-('S-2',	'Bay',	'Nightingale Ward',	'General surgery',	130, 02),
-('S-3',	'Bay',	'Nightingale Ward',	'General surgery',	132, 02),
-('S-4',	'Bay',	'Nightingale Ward',	'General surgery',	138, 02),
-('S-5',	'Bay',	'Nightingale Ward',	'General surgery',	144, 02),
-('S-6',	'Bay',	'Nightingale Ward',	'General surgery',	150, 02),
-('S-7',	'Bay',	'Nightingale Ward',	'General surgery',	156, 02),
-('S-8',	'Bay',	'Nightingale Ward',	'General surgery',	166, 02),
-('R-1',	'Cubicle',	'Fox Ward',	'Respiratory',	123, 03),
-('R-2',	'Bay',	'Fox Ward',	'Respiratory',	127, 03),
-('R-3',	'Bay',	'Fox Ward',	'Respiratory',	129, 03),
-('R-4',	'Bay',	'Fox Ward',	'Respiratory',	131, 03),
-('R-5',	'Bay',	'Fox Ward',	'Respiratory',	136, 03),
-('R-6',	'Cubicle',	'Fox Ward',	'Respiratory',	141, 03),
-('R-7',	'Cubicle',	'Fox Ward',	'Respiratory',	148, 03),
-('R-8',	'Cubicle',	'Fox Ward',	'Respiratory',	155, 03),
-('R-9',	'Bay',	'Fox Ward',	'Respiratory',	158, 03),
-('R-10',	'Bay',	'Fox Ward',	'Respiratory',	170, 03),
-('G-1',	'Bay',	'Apley Ward',	'Gastroentrology',	125, 01),
-('G-2',	'Bay',	'Apley Ward',	'Gastroentrology',	133, 01),
-('G-3',	'Bay',	'Apley Ward',	'Gastroentrology',	139, 01),
-('G-4',	'Bay',	'Apley Ward',	'Gastroentrology',	149, 01),
-('G-5',	'Bay',	'Apley Ward',	'Gastroentrology',	157, 01),
-('G-6',	'Bay',	'Apley Ward',	'Gastroentrology',	167, 01),
-('G-7',	'Bay',	'Apley Ward',	'Gastroentrology',	171, 01),
-('H-1',	'Bay',	'Samaritan Ward',	'Haematology',	126, 05),
-('H-2',	'Bay',	'Samaritan Ward',	'Haematology',	134, 05),
-('H-3',	'Cubicle',	'Samaritan Ward',	'Haematology',	147, 05),
-('H-4',	'Cubicle',	'Samaritan Ward',	'Haematology',	154, 05),
-('H-5',	'Bay',	'Samaritan Ward',	'Haematology',	160, 05),
-('H-6',	'Cubicle',	'Samaritan Ward',	'Haematology',	165, 05),
-('H-7',	'Bay',	'Samaritan Ward',	'Haematology',	168, 05),
-('C-1',	'Bay',	'Becket Ward',	'Cardiology',	124, 06),
-('C-2',	'Bay',	'Becket Ward',	'Cardiology',	145, 06),
-('C-3',	'Bay',	'Becket Ward',	'Cardiology',	151, 06),
-('C-4',	'Cubicle',	'Becket Ward',	'Cardiology',	161, 06),
-('C-5',	'Cubicle',	'Becket Ward',	'Cardiology',	169, 06),
-('D-1',	'Bay',	'Page Ward',	'Dermatology',	135, 04),
-('D-2',	'Bay',	'Page Ward',	'Dermatology',	137, 04),
-('D-3',	'Bay',	'Page Ward',	'Dermatology',	140, 04),
-('D-4',	'Bay',	'Page Ward',	'Dermatology',	142, 04),
-('D-5',	'Bay',	'Page Ward',	'Dermatology',	143, 04),
-('D-6',	'Bay',	'Page Ward',	'Dermatology',	146, 04),
-('D-7',	'Cubicle',	'Page Ward',	'Dermatology',	152, 04),
-('D-8',	'Bay',	'Page Ward',	'Dermatology',	153, 04),
-('D-9',	'Bay',	'Page Ward',	'Dermatology',	159, 04),
-('D-10',	'Cubicle',	'Page Ward',	'Dermatology',	162, 04),
-('D-11',	'Bay',	'Page Ward',	'Dermatology',	163, 04),
-('D-12',	'Bay',	'Page Ward',	'Dermatology',	164, 04);
-
-
--- Inserting data into APPOINTMENT TABLE
 INSERT INTO 
 APPOINTMENTS (appointment_id, appointment_type, appointment_date, appointment_time, appointment_duration, doctor_id)
 VALUES
@@ -188,29 +178,17 @@ VALUES
 (12,	'Face to face',	'2022-06-29',	'10:30:00',	'20 mins',	6643),
 (13,	'Face to face',	'2022-06-30',	'09:00:00',	'30 mins',	4005);
 
-
--- Inserting data into doctor table
-insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID)
-values
-('John Dorian','Cardiologist',7463),
-('Elliot Reid', 'Haematologist',8548),
-('Christopher Turk', 'Haematologist',1930),
-('Percival Cox', 'Pulmonologist',6204),
-('Bob Kelso', 'Surgeon',7247),
-('Todd Quinlan','Dermatologist',4005),
-('Todd jerry','Surgeon',3664),
-('Andrew F','Gastrologist',9486),
-('Nilesh G','Haematologist',3526),
-('Andy R','Pulmonologist',7038),
-('Neil M','Dermatologist',6643),
-('Ricardo G','Pulmonologist',1264),
-('Sam Gardiner', 'Gastrologist',4633),
-('Chris Tab', 'Pulmonologist',7842),
-('Giles F','Surgeon',8574),
-('Mark U','Dermatologist',4326),
-('Robin T','Surgeon',9968),
-('Alex Martin','Surgeon',8837),
-('Cindy R','Cardiologist',5376),
-('Derek Salter','Cardiologist',2636);
-
-SET FOREIGN_KEY_CHECKS=1;
+INSERT INTO OUTPATIENTS(PATIENT_ID,APPOINTMENT_ID,LAB_NO)
+VALUES('124','1','02'),
+('134','2','12'),
+('147','3','25'),
+('141','4','19'),
+('132','5','10'),
+('152','6','30'),
+('130','7','08'),
+('126','8','04'),
+('171','9','49'),
+('165','10','43'),
+('155','11','33'),
+('146','12','24'),
+('162','13','40');

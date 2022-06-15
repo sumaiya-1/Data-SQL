@@ -10,6 +10,21 @@ CREATE TABLE NURSE
 	IS_STUDENT_TRAINEE_INVOLVED BOOLEAN
 );
 
+CREATE TABLE DOCTOR
+(
+	DOCTOR_NAME VARCHAR(100),
+	DOCTOR_SPECIAL VARCHAR(255),
+	DOCTOR_ID INT,
+	PRIMARY KEY (DOCTOR_ID)
+);
+
+CREATE TABLE WARDS (
+	bed_no VARCHAR(20) NOT NULL PRIMARY KEY,
+	room_type VARCHAR(20) NOT NULL,
+	ward_name VARCHAR(20) NOT NULL,
+    ward_type VARCHAR(20) NOT NULL
+);
+
 CREATE TABLE INPATIENT(
 	patient_name VARCHAR(50) NOT NULL,
 	patient_id INT NOT NULL,
@@ -23,36 +38,11 @@ CREATE TABLE INPATIENT(
     nurse_id INT,
 	disease VARCHAR(50) NOT NULL,
     PRIMARY KEY (patient_id),
-    FOREIGN KEY (nurse_id) REFERENCES NURSE(nurse_id)
+    FOREIGN KEY (nurse_id) REFERENCES NURSE(nurse_id),
+    FOREIGN KEY (doctor_id) REFERENCES DOCTOR(doctor_id),
+    FOREIGN KEY (bed_no) REFERENCES WARDS(bed_no)
 );
 
-CREATE TABLE ADMINISTRATOR(
-	a_id INT,
-	A_NAME VARCHAR(20) NOT NULL,
-	GENDER VARCHAR(10) NOT NULL,
-	PRIMARY KEY (a_id)
-);
-
-CREATE TABLE WARDS (
-	bed_no VARCHAR(20) NOT NULL PRIMARY KEY,
-	room_type VARCHAR(20) NOT NULL,
-	ward_name VARCHAR(20) NOT NULL,
-    ward_type VARCHAR(20) NOT NULL, 
-	patient_id INT, 
-    a_id INT,
-	FOREIGN KEY (patient_id) REFERENCES INPATIENT(patient_id),
-    FOREIGN KEY (a_id) REFERENCES ADMINISTRATOR(a_id)
-);
-
-
-CREATE TABLE APPOINTMENTS (
-	appointment_id INT NOT NULL PRIMARY KEY,
-    appointment_type VARCHAR(50) NOT NULL,
-    appointment_date DATE NOT NULL,
-    appointment_time TIME NOT NULL,
-    appointment_duration VARCHAR(50),
-    doctor_id INT NOT NULL
-);
 
 CREATE TABLE BILL(
 	BILL_NO INT NOT NULL,
@@ -70,14 +60,6 @@ CREATE TABLE BILL(
 	FOREIGN KEY (patient_id) REFERENCES INPATIENT(patient_id)
 );
 
-CREATE TABLE DOCTOR
-(
-	DOCTOR_NAME VARCHAR(100),
-	DOCTOR_SPECIAL VARCHAR(255),
-	DOCTOR_ID INT,
-	PRIMARY KEY (DOCTOR_ID)
-);
-
 
 CREATE TABLE LAB
 (
@@ -90,20 +72,28 @@ CREATE TABLE LAB
 	PATIENT_TYPE VARCHAR(50) NOT NULL,
 	AMOUNT INT NOT NULL,
 	PRIMARY KEY (LAB_NO),
-	FOREIGN KEY (DOCTOR_ID) REFERENCES DOCTOR(DOCTOR_ID),
     FOREIGN KEY (PATIENT_ID) REFERENCES INPATIENT(PATIENT_ID)
 );
 
--- added appoinment id to this table - you can use the appointment id to find the patients which will have outpatients appointments
+CREATE TABLE APPOINTMENTS (
+	appointment_id INT NOT NULL PRIMARY KEY,
+    appointment_type VARCHAR(50) NOT NULL,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL,
+    appointment_duration VARCHAR(50),
+    doctor_id INT,
+    FOREIGN KEY (doctor_id) REFERENCES DOCTOR(doctor_id)
+);
+
 CREATE TABLE OUTPATIENTS(
 	PATIENT_ID INT, 
 	appointment_id INT NOT NULL,
 	LAB_NO INT,
-	FOREIGN KEY (appointment_id) REFERENCES APPOINTMENTS(appointment_id),
-    FOREIGN KEY (lab_no) REFERENCES LAB(lab_no)
+    FOREIGN KEY (appointment_id) REFERENCES APPOINTMENTS(appointment_id)
 );
 
 
-DROP DATABASE HOSPITAL_MGMT
+
+DROP DATABASE HOSPITAL_MGMT;
 
 
