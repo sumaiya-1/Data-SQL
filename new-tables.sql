@@ -92,6 +92,9 @@ CREATE TABLE OUTPATIENTS(
     FOREIGN KEY (appointment_id) REFERENCES APPOINTMENTS(appointment_id)
 );
 
+alter table lab drop column CATEGORY;
+alter table lab drop column PATIENT_TYPE;
+alter table lab drop column AMOUNT;
 
 
 DROP DATABASE HOSPITAL_MGMT;
