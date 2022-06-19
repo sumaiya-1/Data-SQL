@@ -3,7 +3,7 @@ USE hospital_mgmt;
 
 SET SQL_mode='';
 
--- TASK 1
+-- TASK 1 - 7
 -- Using any type of the joins create a view that combines multiple tables in a logical way
 
    -- Checking which doctors are working on which ward in case you need to contact them by ward phone
@@ -17,6 +17,7 @@ SELECT DISTINCT
 FROM DOCTOR dr
 JOIN INPATIENT i ON dr.doctor_id = i.doctor_id
 JOIN WARDS w ON i.bed_no = w.bed_no;
+
 
 SELECT * 
 FROM dr_ward 
@@ -44,6 +45,28 @@ WHERE student = TRUE
 			AND admission_date = CURRENT_DATE();
 
 DROP VIEW sur_stu;
+
+   -- Showing the patients within specified weight range and ward
+
+CREATE VIEW illnesses AS
+SELECT 
+	i.patient_name,
+    i.patient_id,
+    i.disease,
+    l.weight,
+    w.bed_no,
+    w.ward_name
+FROM LAB l
+LEFT JOIN INPATIENT i ON l.patient_id = i.patient_id
+LEFT JOIN WARDS w ON w.bed_no = i.bed_no;
+
+SELECT *
+FROM illnesses
+WHERE weight >= 70 AND weight < 90 AND ward_name LIKE 'N%'
+ORDER BY weight;
+
+
+
 -- TASK 2
 -- In your database, create a stored function that can be applied to a query in your DB
 
@@ -63,6 +86,23 @@ DELIMITER ;
 
 SELECT patient_id, bed_no, discharged(discharge_date) FROM INPATIENT;
 
+-- if a patient is recieving health benefits, they will recieve a 50% discount on the total bill price 
+DELIMITER //
+CREATE FUNCTION discount(bill DECIMAL(6,2))
+RETURNS DECIMAL(6,2)
+DETERMINISTIC 
+BEGIN
+	Declare output_amount DECIMAL(6,2);
+    SET output_amount = bill - 50 / 100 * bill;
+	RETURN output_amount;
+END//
+DELIMITER ;
+
+SELECT bill_no, patient_id,bill, discount(bill)
+FROM bill;
+
+
+
 -- TASK 3
 -- Prepare an example query with a subquery to demonstrate how to extract data from your DB for analysis
   
@@ -76,8 +116,9 @@ WHERE lab_no IN
 	WHERE appointment_id IN 
 		(SELECT appointment_id
 		FROM APPOINTMENTS
-        WHERE appointment_date LIKE '%30')
+        WHERE appointment_date LIKE '%28')
 );
+
 
 -- TASK 4
 -- In your database, create a stored procedure and demonstrate how it runs
@@ -143,17 +184,25 @@ VALUES (202259, 12356, 30, 100, 50, 100, 27, 30);
 
 -- TASK 5
 -- In your database, create a trigger and demonstrate how it runs
-CREATE TRIGGER bill_total
-BEFORE UPDATE ON HOSPITAL_mgmt
-FOR EACH ROW
+DELIMITER //
+CREATE TRIGGER number_of_days
+BEFORE INSERT ON INPATIENT
+FOR EACH ROW 
 BEGIN
-	SELECT SUM(doctor_charge, medicine_charge, room_charge, operation_charge, nursing_charge, lab_charge)
-    FROM BILL
-    INSERT INTO bill(bill);
-    
-SELECT SUM(doctor_charge)
-FROM bill
-WHERE bill_no = 202201;
+	SET new.length_of_stay = DATEDIFF(new.discharge_date, new.admission_date);
+END//
+DELIMITER ;
+
+DROP TRIGGER number_of_days;
+
+INSERT INTO WARDS(bed_no, room_type, ward_name, ward_type)
+VALUES ('S-25', 'bed', 'asdfg', 'asdfg');
+
+INSERT INTO INPATIENT(patient_id, patient_name, gender, address, bed_no, admission_date, discharge_date, disease) 
+VALUES (12353, '2325', 'M', 'sgd ef', 'S-25', '2022-06-16', '2022-06-19', 'sdfgh');
+
+
+
 
 
 -- TASK 6
@@ -180,11 +229,6 @@ VALUES ('S-23', 'bed', 'asdfg', 'asdfg');
 INSERT INTO INPATIENT(patient_id, patient_name, gender, address, bed_no, admission_date, discharge_date, disease) 
 VALUES (12356, '2345', 'M', 'sgd ef', 'S-23', '2022-06-10', '2022-06-13', 'sdfgh');
 
--- TASK 7
--- Create a view that uses at least 3-4 base tables; prepare and demonstrate a query that uses 
--- the view to produce a logically arranged result set for analysis.
- 
- 
  
  
 -- TASK 8
@@ -204,6 +248,13 @@ SELECT COUNT(nurse_id), nurse_level
 FROM NURSE
 GROUP BY nurse_level
 ORDER BY COUNT(nurse_id);
+
+-- How many patients weight the same
+
+SELECT COUNT(patient_id), weight
+FROM LAB
+GROUP BY weight
+HAVING COUNT(patient_id) >= 4;
  
  
  
