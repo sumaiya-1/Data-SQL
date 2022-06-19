@@ -28,30 +28,32 @@ VALUES
  update NURSE set IS_STUDENT_TRAINEE_INVOLVED=false where nurse_id in (334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344);
  update nurse set is_student_trainee_involved=true where nurse_id in (345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356);
 
--- Inserting data into OUTPATIENTS table
 
-insert into DOCTOR(DOCTOR_NAME,DOCTOR_SPECIAL,DOCTOR_ID)
+-- Inserting Data into DOCTOR table
+insert into DOCTOR(DOCTOR_NAME,DOCTOR_ID,DOCTOR_SPECIAL)
 values
-('John Dorian','Cardiologist',7463),
-('Elliot Reid', 'Haematologist',8548),
-('Christopher Turk', 'Haematologist',1930),
-('Percival Cox', 'Pulmonologist',6204),
-('Bob Kelso', 'Surgeon',7247),
-('Todd Quinlan','Dermatologist',4005),
-('Todd jerry','Surgeon',3664),
-('Andrew F','Gastrologist',9486),
-('Nilesh G','Haematologist',3526),
-('Andy R','Pulmonologist',7038),
-('Neil M','Dermatologist',6643),
-('Ricardo G','Pulmonologist',1264),
-('Sam Gardiner', 'Gastrologist',4633),
-('Chris Tab', 'Pulmonologist',7842),
-('Giles F','Surgeon',8574),
-('Mark U','Dermatologist',4326),
-('Robin T','Surgeon',9968),
-('Alex Martin','Surgeon',8837),
-('Cindy R','Cardiologist',5376),
-('Derek Salter','Cardiologist',2636);
+('Ali Huffer',	7842,	'Pulmonologist'),
+('Zane Dixon',	8574,	'Surgeon'),
+('Dylan Robinson',	7463,	'Cardiologist'),
+('Lily Allison',	4326,	'Dermatologist'),
+('Ruby Bayly',	8755,	'Haematologist'),
+('Natalie Cartwright',	4633,	'Gastrologist'),
+('Claudia Shuster',	9486,	'Gastrologist'),
+('Christin Nagel',	8548,	'Haematologist'),
+('Matthias Ostermann',	6643,	'Dermatologist'),
+('Michael Cole',	1264,	'Pulmonologist'),
+('Dennis Loewe',	1930,	'Haematologist'),
+('Nicole Mayer',	5376,	'Cardiologist'),
+('Aksel Pettersen',	3664,	'Surgeon'),
+('Adam Landa',	7247,	'Surgeon'),
+('Viktor Eriksen',	9968,	'Surgeon'),
+('Rakel Holm',	8837,	'Surgeon'),
+('Angela Kruglova',	3526,	'Haematologist'),
+('Chloe Forster',	6204,	'Pulmonologist'),
+('Zachary Carter',	7038,	'Pulmonologist'),
+('Kieran Quinn',	4005,	'Dermatologist'),
+('Nicholas Potts',	2636,	'Cardiologist')
+;
 
 INSERT INTO 
 WARDS (bed_no, room_type, ward_name, ward_type)
@@ -178,6 +180,7 @@ VALUES
 (12,	'Face to face',	'2022-06-29',	'10:30:00',	'20 mins',	6643),
 (13,	'Face to face',	'2022-06-30',	'09:00:00',	'30 mins',	4005);
 
+-- Inserting data into OUTPATIENTS table
 INSERT INTO OUTPATIENTS(PATIENT_ID,APPOINTMENT_ID,LAB_NO)
 VALUES('124','1','02'),
 ('134','2','12'),
