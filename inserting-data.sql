@@ -299,5 +299,18 @@ VALUES
 (49,171,56,9486,'2022-06-17');
 
 ALTER TABLE BILL
-DROP COLUMN PATIENT_TYPE;
+DROP COLUMN PATIENT_TYPE,
+DROP COLUMN HEALTH_CARD;
+
+SELECT * FROM BILL;
+
+ALTER TABLE BILL
+ADD health_benefits BOOLEAN;
+
+
+ update Bill set health_benefits=true where patient_id in (123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 160, 161, 162, 163, 164, 165, 166, 167);
+ update BILL set health_benefits=false where patient_id in (141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 168, 169, 170, 171);
+
+
+
 
