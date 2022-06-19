@@ -36,7 +36,6 @@ values
 ('Zane Dixon',	8574,	'Surgeon'),
 ('Dylan Robinson',	7463,	'Cardiologist'),
 ('Lily Allison',	4326,	'Dermatologist'),
-('Ruby Bayly',	8755,	'Haematologist'),
 ('Natalie Cartwright',	4633,	'Gastrologist'),
 ('Claudia Shuster',	9486,	'Gastrologist'),
 ('Christin Nagel',	8548,	'Haematologist'),
