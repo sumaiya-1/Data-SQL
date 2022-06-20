@@ -184,6 +184,9 @@ VALUES (202259, 12356, 30, 100, 50, 100, 27, 30);
 
 -- TASK 5
 -- In your database, create a trigger and demonstrate how it runs
+alter table inpatient
+add column length_of_stay int;
+
 DELIMITER //
 CREATE TRIGGER number_of_days
 BEFORE INSERT ON INPATIENT
